@@ -1,8 +1,7 @@
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import './Button.css';
-function Button(props) {
-    const { children, animate, orange, light, dark, large } = props;
+function Button({ children, animate, orange, light, dark, large }) {
     return (
         <>
             <button 
