@@ -7,6 +7,9 @@ import { CoursesProvider } from './ContextProviders/CoursesContext';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
+document.cookie = "Set-Cookie: promo_shown=1; SameSite=Lax";
+
 root.render(
   <React.StrictMode>
     <CoursesProvider>
