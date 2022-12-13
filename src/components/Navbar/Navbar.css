@@ -1,0 +1,50 @@
+.Navbar {
+    position: fixed;
+    width: 100%;
+    height: 78px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 20px 5px rgb(0 0 0 / 8%);
+    overflow: hidden;
+    z-index: 1010;
+    background-color: white;
+    top: 0;
+}
+
+.Navbar > div {
+    width: 1140px;
+    height: 100%;
+    display: flex;
+    padding-right: var(--bs-gutter-x, 0.75rem);
+    padding-left: var(--bs-gutter-x, 0.75rem);
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Navbar > div > div:first-child {
+    border-left: 3px #212529 solid;
+    padding-left: 2px;
+    display: flex;
+    align-items: flex-end;
+}
+
+@media screen and (max-width: 345px) {
+    .Navbar > div > div:first-child > div {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.Navbar > div > div:first-child span {
+    font-size: 9px;
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 1050px){
+    .Navbar > div {
+        width: 100%;     
+    }
+}

@@ -19,10 +19,11 @@ code {
 }
 
 :root {
-  --bs-orange: #fd7e14;
+  --bs-orange: #f78406;
   --bs-dark: #212529;
   --bs-black: #000000;
   --bs-light: #f8f9fa;
+  --bs-box-shadow: 0 4px 20px 5px rgb(0 0 0 / 8%);
 }
 
 *,
