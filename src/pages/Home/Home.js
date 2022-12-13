@@ -1,6 +1,13 @@
-import Navbar from "../../components/Navbar/Navbar";
+import { useState, useContext } from 'react';
+import {CoursesContext} from '../../ContextProviders/CoursesContext';
+
+import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
+
+import Navbar from '../../components/Navbar/Navbar';
+
 import './Home.css';
 const Home = () => {
+    const courses = useContext(CoursesContext);
     return (
         <>
             <Navbar />
