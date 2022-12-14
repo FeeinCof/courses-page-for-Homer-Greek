@@ -52,7 +52,7 @@ const CourseComponent = ({objData, onClick}) => {
                 >
                     <div>
                         <img width={'42px'} src={icon}/>
-                        <h4 className='bold text-light'>&nbsp;{name}</h4>
+                        <h4 className='bold text-light'>&nbsp;&nbsp;{name}</h4>
                     </div>
                     <div>
                         <p className='bold text-light'>8 videos</p>

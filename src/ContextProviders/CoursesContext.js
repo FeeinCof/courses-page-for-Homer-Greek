@@ -1,6 +1,7 @@
 import { useState, createContext } from "react";
 import collaborationIcon from '../assets/images/collaboration_icon.svg';
 import productIcon from '../assets/images/product_icon.png';
+import executionIcon from '../assets/images/execution_icon.png';
 const CoursesContext = createContext();
 
 const CoursesProvider = ({children}) => {
@@ -33,6 +34,38 @@ const CoursesProvider = ({children}) => {
             }
         ]
     };
+
+    const executionQuestions = {
+        name: 'Execution Questions',
+        icon: executionIcon,
+        videos: [
+            {
+                title: 'Overview of Execution question',
+                src: 'https://www.youtube.com/embed/nUaSJJT7Ars',
+                time: 93,
+                free: {
+                    src: 'https://i.ytimg.com/vi_webp/C2vU1cF-BEA/maxresdefault.webp'
+                }
+            }
+        ],
+        playlist: {
+            'Metrics': [
+                {
+                    title: 'How to flawlessly answer Metrics questions',
+                    src: 'https://www.youtube.com/embed/nUaSJJT7Ars',
+                    time: 792
+                }
+            ],
+            'Analytical': [
+                {
+                    title: 'How to flawlessly answer Crisis Response question',
+                    src: 'https://www.youtube.com/embed/nUaSJJT7Ars',
+                    time: 792
+                }
+            ]
+        }
+    }
+
     const productQuestion = {
         name: 'Product Questions',
         icon: productIcon,
@@ -62,10 +95,10 @@ const CoursesProvider = ({children}) => {
                 }
             ]
         }
-        };
+    };
 
     return (
-        <CoursesContext.Provider value={[breakingScript, productQuestion]}>
+        <CoursesContext.Provider value={[breakingScript, executionQuestions, productQuestion]}>
             {children}
         </CoursesContext.Provider>
     )

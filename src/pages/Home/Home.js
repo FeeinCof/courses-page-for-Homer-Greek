@@ -15,6 +15,8 @@ import groupsLogo from '../../assets/images/group_logos_p@500.png';
 import totalCustomerGIf from '../../assets/images/total_customers@gif.gif';
 import totalCompGif from '../../assets/images/total_comp@gif.gif';
 import courseContentGif from '../../assets/images/course_content@gif.gif';
+import giftIcon from '../../assets/images/gift_icon.png';
+import branchLogo from '../../assets/images/_branch_logo@1080.png';
 
 const Home = () => {
     const rightBarRef = useRef();
@@ -30,7 +32,6 @@ const Home = () => {
     })
 
     const toggleFullScrVideo = ({title, src}) => {
-        console.log(title, src);
         setFullScrVideoOpen(!isFullScrVideoOpen);
         src ? setPropsFullScrVideo({title, src}) : setPropsFullScrVideo({
             title: 'asdsaf',
@@ -46,7 +47,6 @@ const Home = () => {
         let courseH = getBoundingCourseRef.height;
         let distance = courseH - rightBarH;
         let disOfCorsToTop = getBoundingCourseRef.top - 82; // Negative to Positive
-        console.log(Math.round(disOfCorsToTop))
         disOfCorsToTop *= -1;
         if (rightBarH > courseH) {
             rightBarRef.current.classList.remove('fixedBarSt1')
@@ -177,20 +177,56 @@ const Home = () => {
                     </div>
                     <div className='course-rightbar'>
                         <div ref={rightBarRef}>
-                            <div className='card-fixed'>
+                            <div className='fixed-bar'>
                                 <CardVideo
                                     onClick={() => toggleFullScrVideo({})}
                                     shadow
                                 />
                             </div>
+                            <div className='br-green gift-box'>
+                                <img src={giftIcon} width='48px' height={'46.58px'}/>
+                                <span>&nbsp;</span>
+                                <p className="text-gray">Want to get <strong>free lifetime access</strong> to all 9 Product Alliance courses through your employer? <strong className="bold text-green">Learn&nbsp;more&nbsp;→</strong></p>
+                            </div>
                         </div>
-                        {/* <div className='border-green'>
-                            <img src={giftIcon} width='48px' height={'46.58px'}/>
-                            <span>&nbsp;</span>
-                            <p className="text t-small">Want to get <strong>free lifetime access</strong> to all 9 Product Alliance courses through your employer? <strong className="bold-text-green">Learn&nbsp;more&nbsp;→</strong></p>
-                        </div> */}
                     </div>
                 </div>
+            </div>
+            <br/>
+            <br/>
+            <div className='container-fluid'>
+                <div className='container footer'>
+                    <div>
+                        <div>
+                            <img src={branchLogo} width={'156px'}/>
+                            <span className='text-black'>Made with ❤️</span>
+                            <span className='text-orange'>&nbsp;in India</span>
+                        </div>
+                        <p className='text-gray'>
+                            <a className='t-28 text-gray' href='https://www.homergreek.com/'>homer&greek</a>
+                            <span className='t-14 bold'>&nbsp;All Rights Reserved!</span>
+                        </p>
+                    </div>
+                    <div>
+                        <p className='bold text-orange'>Unlock a 32-minute video lesson to learn how to answer the hardest PM interview questions for FREE!</p>
+                        <form>
+                            <input className='form-control shadow' type={'text'} placeholder={'Your email'}></input>
+                            &nbsp;
+                            &nbsp;
+                            <Button shadow orange large>Get video</Button>
+                        </form>
+                    </div>
+                </div>
+                <br/>
+                <br/>
+                <br/>
+                <div className='container'>
+                    <span className='text-gray t-14'>Copyright © Homer & Greek 2022.</span>
+                    <a className='text-gray' style={{
+                        float: 'right'
+                    }} href='https://www.homergreek.com/'>About us</a>
+                </div>
+                <br/>
             </div>
         </>
     )
