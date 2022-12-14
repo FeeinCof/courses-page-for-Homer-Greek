@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 import './CourseItem.css';
 
 import playIcon from '../../assets/images/playButton.svg';
@@ -41,6 +43,14 @@ const CourseItem = ({title, src, time, free, onClick}) => {
             </div>
         </>
     )
+}
+
+CourseItem.propTypes = {
+    title: PropTypes.string,
+    time: PropTypes.number,
+    src: PropTypes.string,
+    free: PropTypes.object,
+    onClick: PropTypes.func
 }
 
 export default CourseItem;

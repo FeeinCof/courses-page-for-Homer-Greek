@@ -1,0 +1,21 @@
+.CoursesGroup {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 12px;
+    padding: .75rem 1rem;
+    margin: .25em 0;
+    border-bottom: 1px solid #c4c4c4;
+    border-radius: 0;
+}
+
+.CoursesGroup:hover {
+    cursor: pointer;
+}
+
+.CoursesGroup p {
+    margin: 0;
+}

@@ -1,4 +1,4 @@
-import { useState, useContext } from 'react';
+import { useState, useContext, useLayoutEffect, useRef } from 'react';
 import {CoursesContext} from '../../ContextProviders/CoursesContext';
 
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
@@ -17,6 +17,8 @@ import totalCompGif from '../../assets/images/total_comp@gif.gif';
 import courseContentGif from '../../assets/images/course_content@gif.gif';
 
 const Home = () => {
+    const rightBarRef = useRef();
+    const courseRef = useRef();
     const body = document.querySelector('body');
 
     const courses = useContext(CoursesContext);
@@ -36,6 +38,36 @@ const Home = () => {
         });
         !isFullScrVideoOpen ? disableBodyScroll(body) : enableBodyScroll(body);
     }
+
+    useLayoutEffect(() => {
+        const onScroll = () => {
+        const getBoundingCourseRef = courseRef.current.getBoundingClientRect();
+        let rightBarH = rightBarRef.current.getBoundingClientRect().height;
+        let courseH = getBoundingCourseRef.height;
+        let distance = courseH - rightBarH;
+        let disOfCorsToTop = getBoundingCourseRef.top - 82; // Negative to Positive
+        console.log(Math.round(disOfCorsToTop))
+        disOfCorsToTop *= -1;
+        if (rightBarH > courseH) {
+            rightBarRef.current.classList.remove('fixedBarSt1')
+            rightBarRef.current.classList.remove('fixedBarSt2')
+        }
+        else if (disOfCorsToTop >= 0 && disOfCorsToTop < distance) {
+            rightBarRef.current.classList.add('fixedBarSt1')
+            rightBarRef.current.classList.remove('fixedBarSt2')
+        } 
+        else if (disOfCorsToTop >= distance) {
+            rightBarRef.current.classList.remove('fixedBarSt1')
+            rightBarRef.current.classList.add('fixedBarSt2')
+        } 
+        else {
+            rightBarRef.current.classList.remove('fixedBarSt1')
+            rightBarRef.current.classList.remove('fixedBarSt2')
+        }
+      };
+      window.addEventListener("scroll", onScroll);
+      return () => window.removeEventListener("scroll", onScroll);
+    }, []);
 
     return (
         <>
@@ -136,7 +168,7 @@ const Home = () => {
                 </div>
                 <br />
                 <div className='container courses-container'>
-                    <div className="courses-leftbar">
+                    <div className="courses-leftbar" ref={courseRef}>
                         {
                             courses.map((a, index) => {
                                 return <CourseComponent objData={a} key={index} onClick={toggleFullScrVideo} />
@@ -144,15 +176,19 @@ const Home = () => {
                         }
                     </div>
                     <div className='course-rightbar'>
-                        <div className='fixed-bar'>
+                        <div ref={rightBarRef}>
                             <div className='card-fixed'>
                                 <CardVideo
                                     onClick={() => toggleFullScrVideo({})}
                                     shadow
                                 />
                             </div>
-                            <div>a</div>
                         </div>
+                        {/* <div className='border-green'>
+                            <img src={giftIcon} width='48px' height={'46.58px'}/>
+                            <span>&nbsp;</span>
+                            <p className="text t-small">Want to get <strong>free lifetime access</strong> to all 9 Product Alliance courses through your employer? <strong className="bold-text-green">Learn&nbsp;more&nbsp;→</strong></p>
+                        </div> */}
                     </div>
                 </div>
             </div>
