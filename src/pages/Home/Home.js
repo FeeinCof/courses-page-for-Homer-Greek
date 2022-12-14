@@ -5,15 +5,19 @@ import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 
 import Navbar from '../../components/Navbar/Navbar';
 import FullScreenVideo from '../../components/FullScreenVideo/FullScreenVideo';
+import Button from '../../components/Button/Button';
+import CardVideo from '../../components/CardVideo/CardVideo';
 
 import './Home.css';
+
+import groupsLogo from '../../assets/images/group_logos_p@500.png';
 
 const Home = () => {
     const body = document.querySelector('body');
 
     const courses = useContext(CoursesContext);
     
-    const [ isFullScrVideoOpen, setFullScrVideoOpen ] = useState(true);
+    const [ isFullScrVideoOpen, setFullScrVideoOpen ] = useState(false);
     const [ propsFullScrVideo, setPropsFullScrVideo ] = useState({
         title: 'asdsaf',
         src: 'https://www.youtube.com/embed/nUaSJJT7Ars'
@@ -21,7 +25,10 @@ const Home = () => {
 
     const toggleFullScrVideo = ({title, src}) => {
         setFullScrVideoOpen(!isFullScrVideoOpen);
-        src ? setPropsFullScrVideo({title, src}) : setPropsFullScrVideo({title, src});
+        src ? setPropsFullScrVideo({title, src}) : setPropsFullScrVideo({
+            title: 'asdsaf',
+            src: 'https://www.youtube.com/embed/nUaSJJT7Ars'
+        });
         !isFullScrVideoOpen ? disableBodyScroll(body) : enableBodyScroll(body);
     }
 
@@ -37,9 +44,38 @@ const Home = () => {
                     )
             }
             <Navbar />
-            <div className="container-fuild" style={{marginTop: '82px'}}>
-                <div className="container">
-                    
+            <div className="container-fuild bg-fluid-1" style={{marginTop: '78px'}}>
+                <div className="container intro-container">
+                    <div className="container-left">
+                        <div className="hacking-icon"></div>
+                        <h1 className="t-50">Hacking the Product Management Inteview</h1>
+                        <br/>
+                        <span className='t-bg-white'>Course last updated: Dec 5, 2022</span>
+                        <span>This course will teach you how to answer ANY interview <br/> question thrown your way</span>
+                        <br/>
+                        <Button orange large>Explore the course</Button>
+                    </div>
+                    <div className="container-right">
+                        <div className='intro-cardvideo'>
+                            <CardVideo
+                                onClick={() => toggleFullScrVideo({})}
+                                shadow
+                            />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className="container-fuild bg-fluid-2">
+                <div className="container about-container">
+                    <div className="container-left order-2">
+                        <h1 className='t-50 text-orange'>About the Course</h1>
+                        <p className='text-dark'>Overwhelmed by all the different questions you may get asked during the product management interview?</p>
+                        <p className='text-dark'>Your time is limited and valuable so no <b>there's no fluff content </b>in our course. We filmed PMs from various top companies answering the <b>85 interview questions </b>below to show you what <b>10-out-of-10 responses look like. </b>All our <b>HD videos</b> are <b>professionally annotated </b>with graphics & notes to aid visual learners and show you exactly what to whiteboard. We explain the nuances of being an exceptional interviewee—from adding strategic framing in your answers to the body language you should exhibit.</p>
+                        <br/><img width={'80%'} src={groupsLogo}/>
+                    </div>
+                    <div className="container-right">
+                        <div className='about-png'></div>
+                    </div>
                 </div>
             </div>
         </>

@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 import './FullScreenVideo.css';
 
 function FullScreenVideo({src, title, onClick}) {
@@ -13,6 +15,12 @@ function FullScreenVideo({src, title, onClick}) {
             </div>
         </>
     )
+}
+
+FullScreenVideo.propTypes = {
+    src: PropTypes.string,
+    title: PropTypes.string,
+    onClick: PropTypes.func
 }
 
 export default FullScreenVideo;

@@ -1,0 +1,178 @@
+.CardVideo {
+    width: 90%;
+    max-width: 400px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    border-radius: 12px;
+    background-color: #fff;
+}
+
+.shadow {
+    box-shadow: 0 4px 20px 5px rgb(0 0 0 / 8%);
+}
+
+.CardHeader {
+    width: 100%;
+    height: auto;
+    position: relative;
+}
+
+.CardHeader img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+.button_play {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    top: 30%;
+    right: 0;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: #333; */
+    opacity: .8;
+    border-radius: 50%;
+}
+
+.CardHeader:hover {
+    cursor: pointer;
+}
+
+.button_play > img {
+    width: 100%;
+    height: auto;
+    margin-left: 3px;
+}
+
+.CardHeader-body {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    font-weight: 200;
+    font-size: 14px;
+    color: #fff;
+    padding: 1em 0;
+    background-color: rgba(0, 0, 0, 0.484);
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    transition: opacity linear 0.3s;
+    opacity: 0;
+}
+
+.CardHeader:hover .CardHeader-body {
+    opacity: 1;
+}
+
+.CardHeader span {
+    width: 90%;
+}
+
+
+@media screen and (max-width: 765px) {
+    .CardVideo {
+        max-width: 90% !important;
+    }
+}
+
+.CardBody {
+    width: 95%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.CardTitle {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 1em 0;
+}
+
+.CardTitle > div {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.CardTitle > div > p {
+    color: #281705;
+    font-size: 30px !important;
+    font-weight: 600;
+    margin: 0;
+}
+
+.CardTitle > div > a {
+    color: #000;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0px;
+    background-color: #eae5f1;
+    border-radius: 12px;
+    text-align: center;
+    padding: .5em 1em;
+    text-decoration: none;
+}
+
+.CardContent {
+    width: 95%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.CardItem {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding: .4em 0;
+}
+
+.CardItem > span {
+    color: #959ca2;
+    letter-spacing: .2px;
+    font-size: 14px;
+    margin-left: 15px;
+    text-align: start;
+}
+
+.HeadingItem > span {
+    color: #281705 !important;
+    font-size: 16px !important;
+    font-weight: 900;
+}
+
+@media screen and (max-width: 576px) {
+    .HeadingItem > span {
+        font-size: 14px !important;
+    }
+    .CardItem > span {
+        font-size: 12px;
+    }
+}
