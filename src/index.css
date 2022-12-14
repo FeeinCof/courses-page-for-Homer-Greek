@@ -51,8 +51,9 @@ hr:not([size]) {
 }
 
 h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
-  margin-top: 0;
-  margin-bottom: 0.5rem;
+  margin-top: 0 !important;
+  margin-bottom: 0.5rem !important;
+  /* margin: 0 !important; */
   font-weight: 500;
   line-height: 1.2;
 }
@@ -452,13 +453,24 @@ progress {
 }
 
 .text-orange {
-  color: #fd7e14 !important;
+  color: #fa6900 !important;
+}
+.text-light {
+  color: #fff !important;
 }
 .text-dark {
   color: #212529 !important;
 }
 .text-black {
   color: #000000 !important;
+}
+.text-gray {
+  color: #e0e4cc !important;
+}
+
+.t-14 {
+  font-size: 14px;
+  font-weight: normal;
 }
 
 .t-42 {
@@ -472,11 +484,24 @@ progress {
 
 @media screen and (max-width: 576px) {
   .t-42 {
-    font-size: 28px;
-  }
-  .t-50 {
     font-size: 32px;
   }
+  .t-50 {
+    font-size: 42px;
+  }
+}
+
+.lighter {
+  font-weight: lighter !important;
+}
+.normal {
+  font-weight: normal !important;
+}
+.bold {
+  font-weight: bold !important;
+}
+.bolder {
+  font-weight: bolder !important;
 }
 
 .t-bg-white {
@@ -499,5 +524,11 @@ progress {
 @media (min-width: 1200px) {
   .container {
       max-width: 1140px;
+  }
+}
+
+@media (max-width: 576px) {
+  .container {
+    max-width: 100%;
   }
 }

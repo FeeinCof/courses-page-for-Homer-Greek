@@ -39,7 +39,7 @@ function CardVideo({onClick, shadow}) {
                     <div className='CardTitle'>
                         <div>
                             <p>$430</p>
-                            <Button orange large>
+                            <Button dark large>
                                 &nbsp;&nbsp; Buy now &nbsp;&nbsp;
                             </Button>
                         </div>

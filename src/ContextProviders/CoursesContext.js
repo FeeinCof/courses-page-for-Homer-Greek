@@ -4,6 +4,7 @@ const CoursesContext = createContext();
 
 const CoursesProvider = ({children}) => {
     const breakingScript = {
+        name: 'Breaking the Script',
         videos: [
             {
                 title: 'Introduction to Breaking the Script',
@@ -31,6 +32,7 @@ const CoursesProvider = ({children}) => {
         ]
     };
     const productQuestion = {
+        name: 'Product Questions',
         videos: [
             {
                 title: 'Overview of Product question',

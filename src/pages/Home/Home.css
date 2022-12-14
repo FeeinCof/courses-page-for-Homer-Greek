@@ -21,15 +21,15 @@
 }
 
 .intro-container {
-    height: 100vh;
+    height: auto;
     display: flex;
     color: #fff;
     justify-content: space-between;
+    padding-bottom: 1em;
 }
 
 @media screen and (max-width: 768px) {
     .intro-container, .about-container {
-        height: auto;
         flex-direction: column;
         align-items: center;
         padding: 0;
@@ -70,7 +70,7 @@
 .hacking-icon {
     position: absolute;
     left: -13%;
-    top: 13%;
+    top: 9%;
     width: 65px ;
     height: 65px;
     border-radius: 50%;
@@ -85,6 +85,7 @@
     .container-left, .container-right {
         width: 100%;
         align-items: center;
+        z-index: 1;
     }
 
     .container-left h1, span {
@@ -93,9 +94,10 @@
     .hacking-icon {
         top: 5%;
         left: auto;
-        opacity: .2;
+        opacity: .3;
         width: 300px;
         height: 300px;
+        z-index: -1;
         background-size: 250px;
     }
 }
@@ -134,4 +136,87 @@
         background-position-y: auto;
         background-position-x: 20%;
     }   
+}
+
+.our-metrics {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+    .our-metrics {
+        margin-top: 2em;
+    }
+}
+
+.our-metrics > div {
+    display: flex;
+    justify-content: center;
+}
+
+@media screen and (max-width: 768px) {
+    .our-metrics > div {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.our-metrics > div > div {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 2px;
+    text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+    .our-metrics > div > div {
+        width: 70%;
+        margin: 5px 0;
+    }
+}
+
+.our-metrics > div > div > img {
+    box-shadow: 0 4px 20px 5px rgb(0 0 0 / 8%);
+}
+
+.courses-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: space-between;
+}
+
+@media screen and (max-width: 992px) {
+    .courses-container {
+        flex-direction: column;
+    }
+}
+
+.courses-leftbar {
+    flex-grow: 1;
+}
+
+@media screen and (max-width: 992px) {
+    .courses-leftbar {
+        width: 100%;
+    }
+}
+
+.course-rightbar {
+    width: 400px;
+}
+
+/* .fixed-bar { */
+    
+/* } */
+
+@media screen and (max-width: 992px) {
+    .card-fixed:first-child {
+        display: none;
+    }
 }
