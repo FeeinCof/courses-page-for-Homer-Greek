@@ -42,31 +42,31 @@ const Home = () => {
 
     useLayoutEffect(() => {
         const onScroll = () => {
-        const getBoundingCourseRef = courseRef.current.getBoundingClientRect();
-        let rightBarH = rightBarRef.current.getBoundingClientRect().height;
-        let courseH = getBoundingCourseRef.height;
-        let distance = courseH - rightBarH;
-        let disOfCorsToTop = getBoundingCourseRef.top - 82; // Negative to Positive
-        disOfCorsToTop *= -1;
-        if (rightBarH > courseH) {
-            rightBarRef.current.classList.remove('fixedBarSt1')
-            rightBarRef.current.classList.remove('fixedBarSt2')
-        }
-        else if (disOfCorsToTop >= 0 && disOfCorsToTop < distance) {
-            rightBarRef.current.classList.add('fixedBarSt1')
-            rightBarRef.current.classList.remove('fixedBarSt2')
-        } 
-        else if (disOfCorsToTop >= distance) {
-            rightBarRef.current.classList.remove('fixedBarSt1')
-            rightBarRef.current.classList.add('fixedBarSt2')
-        } 
-        else {
-            rightBarRef.current.classList.remove('fixedBarSt1')
-            rightBarRef.current.classList.remove('fixedBarSt2')
-        }
-      };
-      window.addEventListener("scroll", onScroll);
-      return () => window.removeEventListener("scroll", onScroll);
+            const getBoundingCourseRef = courseRef.current.getBoundingClientRect();
+            let rightBarH = rightBarRef.current.getBoundingClientRect().height;
+            let courseH = getBoundingCourseRef.height;
+            let distance = courseH - rightBarH;
+            let disOfCorsToTop = getBoundingCourseRef.top - 82; // Negative to Positive
+            disOfCorsToTop *= -1;
+            if (rightBarH >= courseH) {
+                rightBarRef.current.classList.remove('fixedBarSt1');
+                rightBarRef.current.classList.remove('fixedBarSt2');
+            }
+            else if (disOfCorsToTop >= 0 && disOfCorsToTop < distance) {
+                rightBarRef.current.classList.add('fixedBarSt1')
+                rightBarRef.current.classList.remove('fixedBarSt2')
+            } 
+            else if (disOfCorsToTop >= distance) {
+                rightBarRef.current.classList.remove('fixedBarSt1')
+                rightBarRef.current.classList.add('fixedBarSt2')
+            } 
+            else {
+                rightBarRef.current.classList.remove('fixedBarSt1')
+                rightBarRef.current.classList.remove('fixedBarSt2')
+            }
+        };
+        window.addEventListener("scroll", onScroll);
+        return () => window.removeEventListener("scroll", onScroll);
     }, []);
 
     return (
