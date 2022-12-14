@@ -1,0 +1,35 @@
+.CourseItem {
+    width: 98%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 12px;
+    padding: .75rem 1rem;
+    margin: .25em 0;
+}
+
+.CourseItem > div:first-child {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.CourseItem > div:first-child span {
+    text-align: start !important;
+    margin-left: 6px;
+}
+
+.CourseItem:hover {
+    background-color: #f5f7f7;
+    cursor: pointer;
+}
+
+.CourseItem img {
+    border-radius: 6px;
+}
+
+.free {
+    background-color: #ebeded !important;
+}

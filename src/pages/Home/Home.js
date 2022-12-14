@@ -20,7 +20,6 @@ const Home = () => {
     const body = document.querySelector('body');
 
     const courses = useContext(CoursesContext);
-    console.log(courses);
 
     const [ isFullScrVideoOpen, setFullScrVideoOpen ] = useState(false);
     const [ propsFullScrVideo, setPropsFullScrVideo ] = useState({
@@ -29,6 +28,7 @@ const Home = () => {
     })
 
     const toggleFullScrVideo = ({title, src}) => {
+        console.log(title, src);
         setFullScrVideoOpen(!isFullScrVideoOpen);
         src ? setPropsFullScrVideo({title, src}) : setPropsFullScrVideo({
             title: 'asdsaf',
@@ -128,8 +128,10 @@ const Home = () => {
             </div>
             <br/>
             <br/>
-            <div className="container-fuild">
+            <div className="container-fuild bg-gray">
                 <div className='container'>
+                    <br/>
+                    <br/>
                     <h1 className='t-42 text-orange'>Explore the Courses</h1>
                 </div>
                 <br />
@@ -137,7 +139,7 @@ const Home = () => {
                     <div className="courses-leftbar">
                         {
                             courses.map((a, index) => {
-                                return <CourseComponent objData={a} key={index}/>
+                                return <CourseComponent objData={a} key={index} onClick={toggleFullScrVideo} />
                             })
                         }
                     </div>

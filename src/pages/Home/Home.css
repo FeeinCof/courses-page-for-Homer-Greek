@@ -13,6 +13,10 @@
     background-repeat: repeat-y;
 }
 
+.bg-gray {
+    background-color: #f5f7f7;
+}
+
 @media screen and (max-width: 768px) {
     .bg-fluid-1 {
         background-position-y: 100%;

@@ -23,6 +23,7 @@ code {
   --bs-dark: #212529;
   --bs-black: #000000;
   --bs-light: #f8f9fa;
+  --bs-gray: #5f5f60;
   --bs-box-shadow: 0 4px 20px 5px rgb(0 0 0 / 8%);
 }
 
@@ -465,7 +466,7 @@ progress {
   color: #000000 !important;
 }
 .text-gray {
-  color: #e0e4cc !important;
+  color: #5f5f60 !important;
 }
 
 .t-14 {
@@ -475,6 +476,10 @@ progress {
 
 .t-42 {
   font-size: 42px;
+  font-weight: bold;
+}
+.t-18 {
+  font-size: 18px;
   font-weight: bold;
 }
 .t-50 {
