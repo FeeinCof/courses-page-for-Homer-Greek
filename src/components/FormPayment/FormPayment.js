@@ -176,8 +176,12 @@ const FormPayment = ({coupon}) => {
                             }
                             {
                                 paymentMethod === 'paypal' && (
-                                    <Button large shadow light type={'button'}>
-                                        <img src={paypalIcon}/> <span className='bold'>Checkout</span></Button>
+                                    <>
+                                        <Button large shadow light type={'button'}>
+                                            <img src={paypalIcon}/> <span className='bold'>Checkout</span>
+                                        </Button>
+                                        <p className='t-14 bold'>The safer, easier way to pay!</p>
+                                    </>
                                 )
                             }
                         </div>

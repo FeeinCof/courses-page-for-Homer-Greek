@@ -83,6 +83,10 @@
     justify-content: space-between;
 }
 
+.input-field input:active {
+    background: none;
+}
+
 .number-card-container {
     width: 75%;
 }
