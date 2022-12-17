@@ -1,6 +1,5 @@
 import { useState, useContext, useLayoutEffect, useRef } from 'react';
 import {CoursesContext} from '../../ContextProviders/CoursesContext';
-
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 
 import Navbar from '../../components/Navbar/Navbar';
@@ -186,7 +185,7 @@ const Home = () => {
                             <div className='br-green gift-box'>
                                 <img src={giftIcon} width='48px' height={'46.58px'}/>
                                 <span>&nbsp;</span>
-                                <p className="text-gray">Want to get <strong>free lifetime access</strong> to all 9 Product Alliance courses through your employer? <strong className="bold text-green">Learn&nbsp;more&nbsp;→</strong></p>
+                                <p className="text-gray t-14">Want to get <strong>free lifetime access</strong> to all 9 Product Alliance courses through your employer? <strong className="bold text-green">Learn&nbsp;more&nbsp;→</strong></p>
                             </div>
                         </div>
                     </div>

@@ -241,7 +241,7 @@
 }
 
 @media screen and (max-width: 992px) {
-    .fixedBarSt1 {
+    .fixedBarSt1, .fixedBarSt2 {
         position: unset !important;
         top: unset;
     }

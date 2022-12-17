@@ -1,0 +1,113 @@
+.close-button:hover {
+    cursor: pointer;
+}
+
+.FormPayment {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #fff;
+    border-radius: 4px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";;
+}
+
+.FormPayment hr {
+    height: .5px;
+}
+
+.FormPayment h3 {
+    margin: 0;
+    padding: 0;
+}
+
+.panel-heading {
+    border-bottom: .5px solid #cac6c6;
+    padding: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.price-breakdown {
+    padding: 30px;
+    padding-top: 20px;
+    padding-bottom: 0px;
+    background-color: #fbfbfb;
+    border-bottom: .5px solid #cac6c6;
+}
+
+.price-breakdown > div {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.form-group {
+    padding: 30px;
+}
+
+.form-group input {
+    margin-bottom: 10px;
+}
+
+.change-method-text:hover {
+    opacity: .8;
+    cursor: pointer;
+}
+
+.debit-input {
+    padding: 0 !important;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.debit-input input {
+    border: none !important;
+    outline: none;
+    margin: 0 !important;
+}
+
+.debit-icon {
+    margin-left: .5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-field {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.number-card-container {
+    width: 75%;
+}
+
+.number-card-input {
+    width: 100%;
+}
+
+.info-card-container {
+    width: 25%;
+    display: flex;
+    justify-content: flex-start;
+    transition: .2s ease-in-out;
+}
+.info-card-container:focus-within {
+    width: 55% !important;
+}
+.info-card-container:focus-within .CVC-input {
+    width: 40%;
+}
+
+.date-card-input {
+    width: 100%;
+}
+.CVC-input {
+    width: 0%;
+    transition: .2s ease-in-out;
+}

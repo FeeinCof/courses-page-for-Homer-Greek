@@ -22,11 +22,11 @@ function Navbar(props) {
                         </Link>
                     </div>
                     <div>
-                        <a href='#'>
+                        <Link to='/offers'>
                             <Button animate orange large>
                                 Enroll now
                             </Button>
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </div>
