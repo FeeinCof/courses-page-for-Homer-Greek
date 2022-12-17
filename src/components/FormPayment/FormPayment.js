@@ -6,6 +6,8 @@ import Button from '../../components/Button/Button';
 import './FormPayment.css';
 
 import debitIcon1 from '../../assets/images/debiticon@1.svg';
+import paypalIcon from '../../assets/images/paypal.svg';
+
 const FormPayment = ({coupon}) => {
     var validation = {
         isEmailAddress:function(str) {
@@ -17,7 +19,7 @@ const FormPayment = ({coupon}) => {
             return pattern.test(str);  // returns a boolean
         },
         isNumber:function(str) {
-            var pattern = /^(\s*[0-9]+\s*)+$/;
+            var pattern = /^\d+$/;
             return pattern.test(str);  // returns a boolean
         },
         isSame:function(str1,str2){
@@ -25,23 +27,7 @@ const FormPayment = ({coupon}) => {
         }
     };  
     const [isCoupon, setCoupon] = useState('ff8790asdasd');
-    const [paymentMethod, setPaymentMethod] = useState('card');
-    const [numInpVal, setNumInpVal] = useState('');
-    const [dateExpiry, setDateExpiry] = useState('');
-
-    const numberInpOnChange = (event) => {
-        const value = event.target.value;
-        if ((validation.isNumber(value) || value === '') && value.trim().split(" ").join("").length < 16) {
-            setNumInpVal(value);
-            if ((numInpVal.trim().split(" ").join("").length + 1) % 4 === 0 && numInpVal.length != 0) {
-                setNumInpVal(value + ' ');
-            };
-        };
-    }
-
-    const dateExpiryOnChange = (event) => {
-        const value = event.target.value;
-    }
+    const [paymentMethod, setPaymentMethod] = useState('');
 
     return (
         <>
@@ -107,7 +93,7 @@ const FormPayment = ({coupon}) => {
                                     <hr />
                                     <div className="form-check">
                                         <input 
-                                            onClick={() => setPaymentMethod('card')}
+                                            onClick={() => setPaymentMethod('paypal')}
                                             className="form-check-input"
                                             type="radio"
                                             name="exampleRadios"
@@ -135,8 +121,7 @@ const FormPayment = ({coupon}) => {
                                                 type={'text'} 
                                                 placeholder='Number'
                                                 name='cardnumber'
-                                                onChange={numberInpOnChange}
-                                                value={numInpVal}
+                                                defaultValue=''
                                             />
                                         </span>
                                         <span className='info-card-container'>
@@ -145,8 +130,7 @@ const FormPayment = ({coupon}) => {
                                                 type={'text'} 
                                                 placeholder='MM / YY' 
                                                 name='cardexpiry'
-                                                value={dateExpiry}
-                                                onChange={dateExpiryOnChange}
+                                                defaultValue=''
                                             />
                                             <input 
                                                 className='CVC-input' 
@@ -168,6 +152,7 @@ const FormPayment = ({coupon}) => {
                             )
                         }
                         <br/>
+                        <br/>
                         <div>
                             <div className="form-check">
                                 <input className="form-check-input" type="checkbox" id="inlineCheckbox1" defaultValue="option1" required/>
@@ -184,7 +169,17 @@ const FormPayment = ({coupon}) => {
                         <div style={{
                             textAlign: 'center'
                         }}>
-                            <Button large shadow orange>Complete my purchase</Button>
+                            {
+                                (!paymentMethod || paymentMethod === 'card') && (
+                                    <Button large shadow orange>Complete my purchase</Button>
+                                )
+                            }
+                            {
+                                paymentMethod === 'paypal' && (
+                                    <Button large shadow light type={'button'}>
+                                        <img src={paypalIcon}/> <span className='bold'>Checkout</span></Button>
+                                )
+                            }
                         </div>
                     </div>
                 </form>

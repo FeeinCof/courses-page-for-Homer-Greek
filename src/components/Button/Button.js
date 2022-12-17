@@ -1,10 +1,13 @@
+import { useRef } from 'react';
+
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import './Button.css';
-function Button({ children, animate, orange, light, dark, large }) {
+function Button({ children, animate, orange, light, dark, large, type }) {
     return (
         <>
-            <button 
+            <button
+                type={type}
                 className={classNames(
                     'btn',
                     {'btn-orange': orange},
@@ -26,7 +29,8 @@ Button.propTypes = {
     orange: PropTypes.bool,
     light: PropTypes.bool,
     dark: PropTypes.bool,
-    large: PropTypes.bool
+    large: PropTypes.bool,
+    type: PropTypes.string
 }
 
 export default Button;

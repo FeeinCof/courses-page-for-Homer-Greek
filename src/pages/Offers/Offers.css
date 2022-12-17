@@ -15,6 +15,7 @@
     .offers-container {
         max-width: 95%;
         flex-direction: column;
+        align-items: center;
     }
 }
 
@@ -37,6 +38,18 @@
 
 @media screen and (max-width: 992px) {
     .offers-container-left, .offers-container-right {
-        width: 100%;
+        width: 752px;
+    }
+    .offers-container-left {
+        order: 2;
+    }
+    .offers-container-right {
+        order: 1;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .offers-container-left, .offers-container-right {
+        width: 98%;
     }
 }

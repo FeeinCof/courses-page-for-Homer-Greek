@@ -57,17 +57,18 @@
     box-shadow: 0 0 0 0.25rem rgba(217, 164, 6, 0.5);
 }
 .btn-light {
-    color: #fb9527;
+    color: #212529;
     background-color: #f8f9fa;
     border-color: #f8f9fa;
+    outline: #212529 solid 2px;
 }
 .btn-light:hover {
-    color: #fb9527;
+    color: #212529;
     background-color: #f9fafb;
     border-color: #f9fafb;
 }
 .btn-light:focus {
-    color: #fb9527;
+    color: #212529;
     background-color: #f9fafb;
     border-color: #f9fafb;
     box-shadow: 0 0 0 0.25rem rgba(211, 212, 213, 0.5);
