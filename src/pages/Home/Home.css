@@ -216,9 +216,13 @@
 
 .course-rightbar {
     position: relative;
-    width: 400px;
+    flex-direction: column;
+    width: 350px;
 }
 
+.fixed-bar {
+    width: 350px;
+}
 
 @media screen and (max-width: 992px) {
     .course-rightbar {
