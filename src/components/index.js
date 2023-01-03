@@ -1,0 +1,9 @@
+export { default as Button } from './Button/Button';
+export { default as CardVideo } from './CardVideo/CardVideo';
+export { default as CourseComponent } from './CourseComponent/CourseComponent';
+export { default as CourseItem } from './CourseItem/CourseItem';
+export { default as CoursesGroup } from './CoursesGroup/CoursesGroup';
+export { default as FormPayment } from './FormPayment/FormPayment';
+export { default as FullScreenVideo } from './FullScreenVideo/FullScreenVideo';
+export { default as Navbar } from './Navbar/Navbar';
+export { default as Courses } from './Courses/Courses';

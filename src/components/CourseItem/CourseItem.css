@@ -1,5 +1,5 @@
 .CourseItem {
-    width: 98%;
+    min-width: 98%;
     height: auto;
     display: flex;
     justify-content: space-between;
@@ -16,6 +16,13 @@
     align-items: center;
 }
 
+@media screen and (max-width: 525px) {
+    .CourseItem > div:last-child {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
 .CourseItem > div:first-child span {
     text-align: start !important;
     margin-left: 6px;
@@ -30,6 +37,13 @@
     border-radius: 6px;
 }
 
+
 .free {
     background-color: #ebeded !important;
+}
+
+@media screen and (max-width: 525px) {
+    .courseTitle {
+        font-size: 14px !important;
+    }
 }

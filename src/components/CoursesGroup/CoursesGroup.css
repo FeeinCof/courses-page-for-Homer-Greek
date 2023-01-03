@@ -12,6 +12,10 @@
     border-radius: 0;
 }
 
+@media screen and (max-width) {
+    
+}
+
 .CoursesGroup:hover {
     cursor: pointer;
 }

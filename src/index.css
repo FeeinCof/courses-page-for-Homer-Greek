@@ -504,6 +504,21 @@ progress {
   font-weight: bold;
 }
 
+.t-55 {
+  font-size: 55px;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 765px) {
+  .t-55 {
+    font-size: 40px;
+  }
+}
+
+.t-center {
+  text-align: center;
+}
+
 @media screen and (max-width: 576px) {
   .t-42 {
     font-size: 32px;

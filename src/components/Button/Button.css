@@ -21,6 +21,7 @@
 .btn-lg {
     padding: 0.675rem 1.5rem !important;
     border-radius: 0.3rem !important;
+    font-weight: bold;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -57,10 +58,9 @@
     box-shadow: 0 0 0 0.25rem rgba(217, 164, 6, 0.5);
 }
 .btn-light {
-    color: #212529;
+    color: #fb9527;
     background-color: #f8f9fa;
     border-color: #f8f9fa;
-    outline: #212529 solid 2px;
 }
 .btn-light:hover {
     color: #212529;
@@ -104,4 +104,8 @@
     to {
         transform: scaleY(1);
     }
+}
+
+.w-100 {
+    width: 100%;
 }
