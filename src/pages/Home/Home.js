@@ -349,6 +349,7 @@ const Home = () => {
       <br />
       <div className="container-fluid">
         <h4 className="t-center">Career movements by Product Alliance members</h4>
+        <br />
         <div className="container movement-container">
           <div className="movement-grid">
             <div className="movement-section">
@@ -500,6 +501,10 @@ const Home = () => {
           </div>
         </div>
       </div>
+      <br />
+      <br />
+      <br />
+      <br />
       <br />
       <br />
       <br />
